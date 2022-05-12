@@ -12,11 +12,15 @@ class HomeView extends GetView<HomeController> {
         title: Text('HomeView'),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text(
-          'HomeView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: ListView.builder(
+        itemCount: 20,
+        itemBuilder: ((context, index) {
+          return ListTile(
+            title: Text("Surah"),
+            subtitle: Text("Total Ayat"),
+            trailing: Text("Mulai Baca"),
+          );
+        }),
       ),
     );
   }
